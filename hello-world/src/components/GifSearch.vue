@@ -12,6 +12,7 @@
 <script>
 import GifCollection from "./GifCollection";
 var _ = require("lodash");
+
 export default {
   name: "GifSearch",
   components: {

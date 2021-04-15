@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       numOfClicks: 0,
+
     };
   },
   created() {},

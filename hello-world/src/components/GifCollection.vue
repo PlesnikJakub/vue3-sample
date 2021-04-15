@@ -7,6 +7,7 @@
     </div>
   </div>
 </template>
+
 <script>
 var _ = require("lodash");
 export default {
