@@ -34,10 +34,6 @@ export default {
   flex-wrap: wrap;
   padding: 0 4px;
 }
-.column {
-  flex: 25%;
-  padding: 0 4px;
-}
 .column img {
   margin-top: 8px;
   vertical-align: middle;

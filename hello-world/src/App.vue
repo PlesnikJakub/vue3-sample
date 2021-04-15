@@ -1,17 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <GifSearch/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <TopPanel />
+  <GifSearch />
 </template>
 
 <script>
-import GifSearch from './components/GifSearch.vue'
+import GifSearch from "./components/GifSearch.vue";
+import TopPanel from "./components/TopPanel.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    GifSearch
-  }
-}
+    GifSearch,
+    TopPanel
+  },
+};
 </script>
 
 <style>

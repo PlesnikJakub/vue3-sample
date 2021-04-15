@@ -1,28 +1,28 @@
 <template>
   <div class="hello">
     <input v-model="searchQuery" placeholder="Type something" />
-    <br/>
+    <br />
     <strong>{{ searchIndicator }}</strong>
     <div v-if="searchResult">
-          <GifCollection  v-bind:collection="searchResult"/>
+      <GifCollection v-bind:collection="searchResult" />
     </div>
   </div>
 </template>
 
 <script>
-import GifCollection from './GifCollection';
-var _ = require('lodash')
+import GifCollection from "./GifCollection";
+var _ = require("lodash");
 export default {
   name: "GifSearch",
   components: {
-    GifCollection
+    GifCollection,
   },
   data() {
     return {
       searchQuery: "",
       searchQueryIsDirty: false,
       isCalculating: false,
-      searchResult: []
+      searchResult: [],
     };
   },
   computed: {
@@ -48,17 +48,19 @@ export default {
       this.isCalculating = true;
       setTimeout(
         function() {
-
           const api_key = process.env.VUE_APP_GIPGY_API_KEY;
 
-          fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${this.searchQuery}&limit=25&offset=0&rating=g&lang=en`, {
-            method: 'get',
-            headers: {
-              'content-type': 'application/json'
+          fetch(
+            `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${this.searchQuery}&limit=25&offset=0&rating=g&lang=en`,
+            {
+              method: "get",
+              headers: {
+                "content-type": "application/json",
+              },
             }
-          })
-          .then(response => response.json())
-          .then(data => this.searchResult = data.data);
+          )
+            .then((response) => response.json())
+            .then((data) => (this.searchResult = data.data));
 
           this.isCalculating = false;
           this.searchQueryIsDirty = false;
@@ -72,6 +74,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello{
+  margin-top: 40px;
+}
 h3 {
   margin: 40px 0 0;
 }
